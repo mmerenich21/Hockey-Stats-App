@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Hockey Stats</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--jquery-->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+<!--Bulma styles-->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+<!--font awesome for icons-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+
+<!--link js to handle data transfer between back end and front end-->
+<script type="text/javascript" src="static/js/hockey.js" ></script>
+<script src="/static/lib/jquery/jquery.min.js"></script>
+<script src="/static/lib/popper/popper.min.js"></script>
+
+
+<!--data tables styles-->
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.23/cr-1.5.3/fh-3.1.8/kt-2.6.1/r-2.2.7/rg-1.1.2/datatables.min.css"/>
+ 
+<!--data table scripts-->
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.23/cr-1.5.3/fh-3.1.8/kt-2.6.1/r-2.2.7/rg-1.1.2/datatables.min.js"></script>
+
+<!--custom javascript-->
+<script type="text/javascript" src="static/js/custom.js"></script>
+
+<!--custom css-->
+<link rel="stylesheet" href="static/css/custom.css">
+
+</head>
+
+
+<body>
+
+<div class="content">
+<!--start tabs section-->
+<div id="tabs-with-content">
+  <!--start tab head-->
+<div  class="tabs is-centered is-large ">
+  <!--list out the tabs-->
+  <ul>
+    <li class="tab is-active" onclick="tabbing(event, 'Game Results')"> 
+      <a >
+        <span class="icon is-small"><i class="fas fa-hockey-puck" aria-hidden="true"></i></span>
+        <span>Game Results</span>
+      </a>
+    </li>
+    <li class="tab" onclick="tabbing(event, 'Team Standings')">
+      <a >
+        <span class="icon is-small"><i class="fas fa-trophy" aria-hidden="true"></i></span>
+        <span>Team Standings</span>
+      </a>
+    </li>
+    <li class="tab" onclick="tabbing(event, 'Team Stats')">
+       <a >
+        <span class="icon is-small"><i class="fas fa-user-friends" aria-hidden="true"></i></span>
+        <span>Team Stats</span>
+      </a>
+    </li>
+  </ul>
+</div>
+  <!--end tab header-->
+
+  {% block content %}
+
+
+
+  <!--begin game results section-->
+<div class="tabContent container" id="Game Results"><h2 class="has-text-centered is-size-2">Game Results</h2><br>
+<!--Vertically center select boxes and labels-->
+<div class="columns is-desktop is-vcentered">
+
+<label for="teamDropDown">Choose a team:</label>
+
+<div class="select is-rounded">
+<select name="teamDropDown" id="teamDropDown">
+    {% for o in teams %}
+    <option value="{{ o.id }}" id="{{ o.id }}">{{ o.name }}</option>
+    {% endfor %}
+</select>
+</div>
+
+<!--end select is-rounded-->
+
+
+<label for="seasonDropDown">Choose a season:</label>
+<div class="select is-rounded">
+<select name="seasonDropDown" id="seasonDropDown">
+    {% for i in seasons %}
+    <option value="{{ i.season }}" id="{{ i.season }}">{{ i.season }}</option>
+    {% endfor %}
+</select>
+</div>
+</div>
+<!--End columns is-desktop is-vcentered-->
+<div id="gameResults"></div>
+
+
+</div>
+  <!--end game results section-->
+  
+  
+  
+  <!--Start Team Standings section-->
+  <div class="tabContent container" id="Team Standings" style="display:none">
+    <h2 class="has-text-centered is-size-2">Team Standings</h2>
+    <div class="columns is-vcentered">
+    <label for="standingsSeasonDropDown">Choose a season:</label>
+    <div class="select is-rounded">
+    <select name="standingsSeasonDropDown" id="standingsSeasonDropDown">
+        {% for i in seasons %}
+        <option value="{{ i.season }}" id="{{ i.season }}">{{ i.season }}</option>
+        {% endfor %}
+    </select>
+    </div>
+    <!--end select is rounded-->
+    </div>
+    <!--end column is-vcentered-->
+    
+    <div id="standings"></div>
+
+  </div>
+  <!--End Team Standings section-->
+  <!--Start Team Stats section-->
+  <div class="tabContent container" id="Team Stats" style="display:none"><h2 class="has-text-centered is-size-2">Team Stats</h2>
+    <div class="columns is-vcentered">
+    <label for="statsSeasonDropDown">Choose a season:</label>
+    <div class="select is-rounded">
+    <select name="statsSeasonDropDown" id="statsSeasonDropDown">
+        {% for i in seasons %}
+        <option value="{{ i.season }}" id="{{ i.season }}">{{ i.season }}</option>
+        {% endfor %}
+    </select>
+    </div>
+    <!--end select is-rounded-->
+    
+    <label for="statsSplits">Choose a split:</label>
+    <div class="select is-rounded">
+    <select name="statsSplits" id="statsSplits">
+      <option value="Home vs Away" id="Home vs Away">Home vs Away</option>
+      <option value="vs Division" id="vs Division">vs Division</option>
+      <option value="vs Conference" id="Home vs Away">vs Conference</option>
+    </select>
+  </div>
+  <!--end select is-rounded-->
+  </div>
+  <!--end colum is-vcentered-->
+
+    <div id="stats"></div>
+
+
+  <!--End team stats section-->
+  
+ </div> 
+ <!--end tabs-->
+ </div>
+ <!--end content-->
+<script>
+    $(function () {
+        const hockey= new Hockey();
+        hockey.load();
+    });
+</script>
+
+
+{% endblock %}
+
+
+
+
+
+</body>
+
+</html>

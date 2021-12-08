@@ -1,0 +1,32 @@
+Div Rank,Division,Team,GP,Wins,OTW,Losses,OTL,Points,Goals For,Goals Against,Last 5,Rank
+1,Central,Tampa Bay Lightning,23,15,2,4,2,36,83,48,WLOWOWW,2
+2,Central,Carolina Hurricanes,24,11,6,6,1,35,85,64,WWWWOWO,3
+3,Central,Florida Panthers,24,11,4,5,4,34,80,70,LWWLOLO,4
+4,Central,Chicago Blackhawks,26,7,6,8,5,31,82,80,LWOLOWL,7
+5,Central,Columbus Blue Jackets,26,9,1,11,5,25,69,85,LWWLL,18
+6,Central,Nashville Predators,24,7,3,14,0,20,57,79,LLLWW,24
+7,Central,Dallas Stars,19,6,1,8,4,18,53,50,WLLLL,27
+8,Central,Detroit Red Wings,26,6,1,16,3,17,54,87,LLLWW,29
+1,East,New York Islanders,25,15,0,6,4,34,73,56,WWWWW,5
+2,East,Washington Capitals,23,10,3,6,4,30,76,75,LWOWWW,10
+3,East,Boston Bruins,22,8,5,6,3,29,65,54,LWLOWL,12
+4,East,Philadelphia Flyers,21,10,2,6,3,27,70,66,LWLWW,15
+5,East,Pittsburgh Penguins,23,6,7,9,1,27,72,74,WLWLWO,16
+6,East,New York Rangers,22,8,2,9,3,23,65,58,WWWLW,23
+7,East,New Jersey Devils,21,6,2,11,2,18,51,66,WLLLL,28
+8,East,Buffalo Sabres,23,4,2,14,3,15,52,75,LLLLL,31
+1,North,Toronto Maple Leafs,26,16,2,6,2,38,90,63,LLWWW,1
+2,North,Winnipeg Jets,24,10,5,8,1,31,79,69,LWOWLWO,8
+3,North,Edmonton Oilers,26,14,1,11,0,30,83,80,WLLLW,11
+4,North,Montreal Canadiens,23,11,0,6,6,28,78,66,WLOWLOL,13
+5,North,Calgary Flames,25,9,2,12,2,24,68,76,LWLWL,21
+6,North,Vancouver Canucks,28,10,1,15,2,24,81,93,WWLWL,22
+7,North,Ottawa Senators,26,5,3,17,1,17,70,102,LLWLW,30
+1,West,Vegas Golden Knights,21,12,4,4,1,33,70,45,WWOWWOWO,6
+2,West,St. Louis Blues,25,10,4,8,3,31,81,79,LOWOWWW,9
+3,West,Colorado Avalanche,22,11,2,7,2,28,68,55,LOWOWLW,14
+4,West,Minnesota Wild,22,9,4,8,1,27,69,60,LWLLOWO,17
+5,West,Los Angeles Kings,23,8,2,8,5,25,68,65,WOLOLLOL,19
+6,West,Arizona Coyotes,24,9,2,10,3,25,65,73,WLWLL,20
+7,West,Anaheim Ducks,25,5,2,12,6,20,55,76,WOLOLLLO,25
+8,West,San Jose Sharks,22,4,4,11,3,19,63,86,LLOLWL,26

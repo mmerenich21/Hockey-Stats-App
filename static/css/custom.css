@@ -1,0 +1,40 @@
+
+
+#tabs-with-content {
+  overflow: hidden;
+}
+.container {
+  width: 90%;
+}
+
+.hidden {
+  display: none;
+}
+
+.is-primary {
+  margin: .5em !important;
+}
+input[type="text"] {
+  width:20em;
+}
+
+#teamDateSubmission {
+  display: block;
+}
+
+.error {
+  color:red;
+}
+
+th[colspan="5"] {
+  text-align: center;
+}
+
+.content {
+  padding-bottom: 2em;
+}
+
+.is-rounded {
+  margin:1em;
+}
+

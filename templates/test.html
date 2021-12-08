@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<script src="/static/js/hockey.js"></script>
+{% endblock %}
+
+{% block title %}
+NHL Data
+{% endblock %}
+
+{% block content %}
+
+<h1>Game Results</h1>
+
+
+<label for="teamDropDown">Choose a team:</label>
+<select name="teamDropDown" id="teamDropDown">
+    {% for o in teams %}
+    <option value="{{ o.id }}" id="{{ o.id }}">{{ o.name }}</option>
+    {% endfor %}
+</select>
+
+<div id="gameResults" class="container">
+</div>
+<script>
+    $(function () {
+        const hockey= new Hockey();
+        hockey.loadGameResults();
+    });
+</script>
+
+
+{% endblock %}
